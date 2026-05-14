@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atendimento nutricional online com Filipe Alves Nutri: emagrecimento saudável, plano alimentar personalizado e acompanhamento pelo WhatsApp sem dietas malucas.">
+  <title>Filipe Alves Nutri | Atendimento Nutricional Online</title>
+  <style>
+    :root {
+      --primary: #027B82;
+      --primary-dark: #015f65;
+      --primary-light: #018188;
+      --cta-gradient: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 58%, var(--primary-light) 100%);
+      --secondary: #1A1A1A;
+      --neutral: #4A4A4A;
+      --background: #FFFFFF;
+      --soft: #F3F4F6;
+      --accent: #F97316;
+      --border: #E5E7EB;
+      --success-soft: #E6F4F1;
+      --accent-soft: #FFF2E8;
+      --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --radius: 18px;
+      --shadow: 0 24px 70px rgba(2, 123, 130, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--secondary);
+      background: var(--background);
+      line-height: 1.55;
+    }
+    body.menu-open { overflow: hidden; }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.82);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--neutral);
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .desktop-cta { display: none; }
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: var(--secondary);
+    }
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      display: block;
+      content: "";
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+    .menu-toggle span::before { transform: translateY(-6px); }
+    .menu-toggle span::after { transform: translateY(4px); }
+    .mobile-panel {
+      display: none;
+      padding: 0 0 18px;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-panel.open { display: block; }
+    .mobile-panel a {
+      display: block;
+      padding: 14px 0;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 850;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(2, 123, 130, 0.18);
+      transition: transform 180ms ease, filter 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); filter: saturate(1.08) brightness(1.03); box-shadow: 0 18px 38px rgba(2, 123, 130, 0.22); }
+    .btn-primary,
+    .btn-accent {
+      background: var(--cta-gradient);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+    .btn-outline {
+      box-shadow: none;
+    }
+    .btn-outline { background: #fff; border-color: var(--border); color: var(--secondary); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+    .section {
+      padding: clamp(64px, 9vw, 112px) 0;
+    }
+    .section.soft {
+      background: var(--soft);
+    }
+    .section-head {
+      display: grid;
+      gap: 12px;
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+    .eyebrow {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 860px;
+      font-size: clamp(42px, 9.3vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+    h2 {
+      font-size: clamp(30px, 4.6vw, 52px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+    h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .lead {
+      color: var(--neutral);
+      font-size: clamp(18px, 2.4vw, 22px);
+      line-height: 1.55;
+    }
+    .body-copy {
+      color: var(--neutral);
+      font-size: 16px;
+    }
+
+    .hero {
+      padding: clamp(42px, 8vw, 92px) 0 clamp(58px, 8vw, 96px);
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 36px;
+      align-items: center;
+    }
+    .hero-copy {
+      display: grid;
+      gap: 24px;
+      animation: heroRise 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 620px;
+      background: #fff;
+    }
+    .trust-item {
+      min-height: 84px;
+      display: grid;
+      align-content: center;
+      gap: 3px;
+      padding: 14px;
+      border-right: 1px solid var(--border);
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item strong {
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+    .trust-item span {
+      color: var(--neutral);
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .hero-visual {
+      position: relative;
+      min-height: 480px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(249, 115, 22, 0.14), transparent 26%),
+        linear-gradient(145deg, #e7f4f2, #ffffff 54%, #f7f8fa);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: heroFloatIn 860ms 90ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .photo-card {
+      position: absolute;
+      inset: 12px 14px 104px;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: min(100%, 560px);
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      filter: drop-shadow(0 28px 34px rgba(1, 95, 101, 0.18));
+      animation: photoBreath 5.8s ease-in-out infinite;
+    }
+    .metric-panel {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      gap: 10px;
+    }
+    .metric-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(229, 231, 235, 0.92);
+      box-shadow: 0 16px 38px rgba(26, 26, 26, 0.08);
+      animation: metricLift 760ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .metric-card:nth-child(2) { animation-delay: 380ms; }
+    .metric-card strong {
+      display: block;
+      font-size: 18px;
+      color: var(--secondary);
+    }
+    .metric-card span {
+      color: var(--neutral);
+      font-size: 13px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .benefit-card,
+    .step-card,
+    .audience-card,
+    .testimonial-card,
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .benefit-card {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+      min-height: 188px;
+      transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .benefit-card:hover,
+    .step-card:hover,
+    .audience-card:hover,
+    .testimonial-card:hover,
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(2, 123, 130, 0.28);
+      box-shadow: 0 18px 42px rgba(2, 123, 130, 0.10);
+    }
+    .icon-pill {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--success-soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+    }
+    .icon-pill svg { width: 22px; height: 22px; }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      counter-reset: step;
+    }
+    .step-card {
+      position: relative;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+      overflow: hidden;
+      transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .step-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      color: rgba(2, 123, 130, 0.12);
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+    }
+    .step-card > * { position: relative; }
+
+    .results-layout {
+      display: grid;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .carousel {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 16px;
+      overflow: hidden;
+    }
+    .result-slide {
+      display: none;
+      gap: 14px;
+    }
+    .result-slide.active { display: grid; animation: slideFade 340ms ease both; }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .ba-frame {
+      min-height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(150deg, #f8fafc, #e7f4f2);
+      border: 1px dashed rgba(2, 123, 130, 0.34);
+      display: grid;
+      place-items: end start;
+      padding: 14px;
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .result-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 6px 2px 0;
+    }
+    .result-number {
+      color: var(--primary);
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+    .carousel-controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .carousel-controls button {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+      transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .carousel-controls button:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .stats {
+      display: grid;
+      gap: 14px;
+    }
+    .stat-card {
+      padding: 24px;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: clamp(34px, 7vw, 58px);
+      letter-spacing: -0.055em;
+      line-height: 1;
+      color: var(--primary);
+    }
+
+    .audience-grid,
+    .testimonial-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .audience-card {
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+    .audience-card .label {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #9a4308;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .testimonial-card {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(2, 123, 130, 0.2), rgba(249, 115, 22, 0.16)),
+        #fff;
+      border: 1px dashed rgba(2, 123, 130, 0.34);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .quote {
+      font-size: 17px;
+      color: var(--secondary);
+      letter-spacing: -0.01em;
+    }
+    .result-tag {
+      width: fit-content;
+      color: var(--primary-dark);
+      background: var(--success-soft);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    /* ─── Typeform ─── */
+    .typeform-section {
+      padding: clamp(64px, 9vw, 112px) 0;
+      background: var(--soft);
+    }
+    .typeform-wrap {
+      max-width: 780px;
+      margin-inline: auto;
+    }
+    .typeform-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(2, 123, 130, 0.10);
+    }
+    .tf-progress-bar {
+      height: 5px;
+      background: var(--border);
+      position: relative;
+    }
+    .tf-progress-fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+      background: var(--cta-gradient);
+      border-radius: 0 4px 4px 0;
+      transition: width 440ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tf-body {
+      padding: clamp(24px, 5vw, 52px);
+      min-height: 360px;
+      display: grid;
+      align-content: space-between;
+      gap: 32px;
+    }
+    .tf-step {
+      display: none;
+      animation: tfSlideIn 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .tf-step.tf-active { display: grid; gap: 28px; }
+    .tf-step-label {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .tf-question {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+    .tf-options {
+      display: grid;
+      gap: 10px;
+    }
+    .tf-option {
+      min-height: 52px;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: left;
+      background: #fff;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: border-color 150ms ease, background 150ms ease, transform 120ms ease;
+    }
+    .tf-option:hover {
+      border-color: var(--primary);
+      background: var(--success-soft);
+      transform: translateX(3px);
+    }
+    .tf-option.selected {
+      border-color: var(--primary);
+      background: var(--success-soft);
+      color: var(--primary-dark);
+    }
+    .tf-option-key {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--soft);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      flex-shrink: 0;
+      transition: background 150ms ease, color 150ms ease;
+    }
+    .tf-option.selected .tf-option-key {
+      background: var(--primary);
+      color: #fff;
+    }
+    .tf-input {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      font-size: 17px;
+      color: var(--secondary);
+      background: #fff;
+      outline: none;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .tf-input::placeholder { color: var(--neutral); }
+    .tf-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2,123,130,0.13);
+    }
+    .tf-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .tf-nav {
+      display: flex;
+      gap: 10px;
+    }
+    .tf-btn-back {
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--neutral);
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .tf-btn-back:hover { border-color: var(--primary); color: var(--primary); }
+    .tf-btn-next {
+      min-height: 44px;
+      padding: 10px 24px;
+      border-radius: 12px;
+      background: var(--cta-gradient);
+      color: #fff;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 26px rgba(2,123,130,0.22);
+      transition: transform 150ms ease, filter 150ms ease, box-shadow 150ms ease;
+    }
+    .tf-btn-next:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 32px rgba(2,123,130,0.28);
+    }
+    .tf-counter {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--neutral);
+    }
+    /* Tela de obrigado */
+    .tf-done {
+      display: none;
+      text-align: center;
+      padding: clamp(32px, 6vw, 58px) clamp(24px, 5vw, 52px);
+      gap: 18px;
+    }
+    .tf-done.tf-active { display: grid; animation: tfSlideIn 440ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .tf-done-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--success-soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      margin-inline: auto;
+    }
+    @keyframes tfSlideIn {
+      from { opacity: 0; transform: translateX(18px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media (max-width: 599px) {
+      .tf-body { padding: 24px 18px; min-height: 300px; }
+      .tf-question { font-size: clamp(20px, 7vw, 28px); }
+      .typeform-card { border-radius: 22px; }
+    }
+
+    /* ─── CTA final ─── */
+    .final-cta {
+      padding: clamp(58px, 8vw, 86px) 0;
+      background: var(--primary);
+      color: #fff;
+    }
+    .final-box {
+      display: grid;
+      gap: 22px;
+      align-items: center;
+    }
+    .final-box p { color: rgba(255,255,255,0.84); }
+    .site-footer {
+      padding: 34px 0 92px;
+      background: #111;
+      color: rgba(255,255,255,0.78);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .footer-grid a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .social-links { display: flex; gap: 14px; margin-top: 10px; }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.78);
+      text-decoration: none !important;
+      transition: background 180ms, color 180ms, transform 180ms;
+    }
+    .social-link:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 40;
+      min-height: 54px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--cta-gradient);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 900;
+      box-shadow: 0 14px 36px rgba(2, 123, 130, 0.34);
+      animation: whatsappPulse 2.8s ease-in-out infinite;
+      transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
+    }
+    .floating-whatsapp:hover {
+      transform: translateY(-3px) scale(1.02);
+      filter: saturate(1.08) brightness(1.03);
+      box-shadow: 0 18px 44px rgba(2, 123, 130, 0.42);
+    }
+    .floating-whatsapp svg { width: 21px; height: 21px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1), transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 80ms; }
+    .reveal-delay-2 { transition-delay: 160ms; }
+    .reveal-delay-3 { transition-delay: 240ms; }
+
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroFloatIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes photoBreath {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-7px) scale(1.012); }
+    }
+    @keyframes metricLift {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideFade {
+      from { opacity: 0; transform: translateX(12px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes whatsappPulse {
+      0%, 100% { box-shadow: 0 14px 36px rgba(2, 123, 130, 0.34); }
+      50% { box-shadow: 0 14px 36px rgba(2, 123, 130, 0.34), 0 0 0 9px rgba(2, 123, 130, 0.10); }
+    }
+
+    @media (min-width: 600px) {
+      .container { width: min(1160px, calc(100% - 48px)); }
+      .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 900px) {
+      .nav-links, .desktop-cta { display: flex; }
+      .menu-toggle, .mobile-panel { display: none !important; }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.82fr);
+        gap: clamp(40px, 6vw, 78px);
+      }
+      .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .results-layout { grid-template-columns: minmax(0, 1.1fr) 360px; }
+      .audience-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .final-box { grid-template-columns: 1fr auto; }
+      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+    }
+    @media (min-width: 1280px) {
+      .container { width: min(1180px, calc(100% - 64px)); }
+      .hero-visual { min-height: 540px; }
+    }
+    @media (max-width: 599px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav { min-height: 64px; }
+      .brand { gap: 10px; font-size: 15px; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
+      .mobile-panel {
+        max-height: calc(100svh - 64px);
+        overflow: auto;
+      }
+      .mobile-panel a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+      }
+      .hero {
+        padding: 30px 0 54px;
+      }
+      .hero-grid,
+      .hero-copy {
+        gap: 22px;
+      }
+      h1 {
+        font-size: clamp(36px, 11.5vw, 48px);
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+      h2 {
+        font-size: clamp(27px, 8vw, 34px);
+      }
+      .lead {
+        font-size: 17px;
+      }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .btn {
+        width: 100%;
+        min-height: 52px;
+        padding-inline: 16px;
+        text-align: center;
+      }
+      .hero-visual {
+        min-height: 390px;
+        border-radius: 24px;
+      }
+      .photo-card {
+        inset: 8px 8px 112px;
+        border-radius: 20px;
+      }
+      .metric-panel {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+      .metric-card {
+        padding: 14px;
+        border-radius: 16px;
+      }
+      .metric-card strong {
+        font-size: 16px;
+      }
+      .section {
+        padding: 54px 0;
+      }
+      .section-head {
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+      .benefit-card,
+      .step-card,
+      .audience-card,
+      .testimonial-card,
+      .stat-card {
+        padding: 18px;
+      }
+      .benefit-card {
+        min-height: auto;
+      }
+      .carousel {
+        padding: 12px;
+        border-radius: 20px;
+      }
+      .ba-frame {
+        min-height: 190px;
+      }
+      .final-cta {
+        padding: 54px 0 68px;
+      }
+      .floating-whatsapp {
+        left: auto;
+        right: 14px;
+        bottom: max(14px, env(safe-area-inset-bottom));
+        width: 56px;
+        min-height: 56px;
+        padding: 0;
+        box-shadow: 0 16px 38px rgba(2, 123, 130, 0.30);
+      }
+      .floating-whatsapp span { display: none; }
+      .site-footer {
+        padding-bottom: 104px;
+      }
+    }
+    @media (max-width: 420px) {
+      .trust-row { grid-template-columns: 1fr; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--border); }
+      .trust-item:last-child { border-bottom: 0; }
+      .before-after { grid-template-columns: 1fr; }
+      .result-caption { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="landing.html" aria-label="Filipe Alves Nutri">
+        <span class="brand-mark">FA</span>
+        <span>Filipe Alves Nutri</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </nav>
+      <a class="btn btn-primary desktop-cta" href="https://wa.me/559492836085">QUERO SABER MAIS!</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="container mobile-panel" id="mobile-menu">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#avaliacao">Agendar avaliação</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Nutrição online baseada em ciência</div>
+          <h1>Emagreça com Saúde, sem Dietas Malucas e sem Passar Fome.</h1>
+          <p class="lead">Aumente sua autoestima, tenha mais energia e sinta orgulho do seu corpo com um plano alimentar feito especialmente pra você.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="https://wa.me/559492836085">QUERO SABER MAIS!</a>
+            <a class="btn btn-outline" href="#avaliacao">Fazer avaliação gratuita</a>
+          </div>
+          <div class="trust-row" aria-label="Indicadores do acompanhamento">
+            <div class="trust-item"><strong>+3 mil</strong><span>pacientes atendidos</span></div>
+            <div class="trust-item"><strong>4 etapas</strong><span>do plano à evolução</span></div>
+            <div class="trust-item"><strong>Online</strong><span>de qualquer cidade</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Foto de Filipe Alves, nutricionista">
+          <div class="photo-card">
+            <img class="hero-photo" src="mp5saqr3-imagem-filipe-headline-3.png" alt="Filipe Alves, nutricionista">
+          </div>
+          <div class="metric-panel">
+            <div class="metric-card">
+              <strong>A ciência fez a pergunta. O plano responde na sua rotina.</strong>
+              <span>Sem fórmula pronta, sem passar fome, sem abandonar sua vida social.</span>
+            </div>
+            <div class="metric-card">
+              <strong>Você não fica sozinha.</strong>
+              <span>Acompanhamento próximo para ajustar escolhas antes que a motivação caia.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft reveal" id="beneficios">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Benefícios do acompanhamento</div>
+          <h2>O que Você Vai Conquistar com esse Acompanhamento?</h2>
+          <p class="body-copy">O objetivo é emagrecer sem transformar comida em culpa. Plano alimentar, rotina e suporte caminham juntos.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal reveal-delay-1">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20 6-11 11-5-5"></path></svg></span>
+            <h3>Emagrecimento sustentável</h3>
+            <p class="body-copy">Estratégia feita para continuar funcionando depois das primeiras semanas.</p>
+          </article>
+          <article class="benefit-card reveal reveal-delay-2">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-13h-8l1-7Z"></path></svg></span>
+            <h3>Mais energia no dia</h3>
+            <p class="body-copy">Ajustes de refeições para reduzir picos de fome, cansaço e beliscos no automático.</p>
+          </article>
+          <article class="benefit-card reveal reveal-delay-3">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg></span>
+            <h3>Plano personalizado</h3>
+            <p class="body-copy">Nada de cardápio genérico: preferências, exames, horários e rotina entram na conta.</p>
+          </article>
+          <article class="benefit-card reveal reveal-delay-1">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span>
+            <h3>Suporte pelo WhatsApp</h3>
+            <p class="body-copy">Dúvidas de mercado, restaurante e rotina não esperam a próxima consulta.</p>
+          </article>
+          <article class="benefit-card reveal reveal-delay-2">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+            <h3>Sem desperdício de esforço</h3>
+            <p class="body-copy">Retornos revisam o que travou para o metabolismo não esperar por tentativa e erro.</p>
+          </article>
+          <article class="benefit-card reveal reveal-delay-3">
+            <span class="icon-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9-10a5 5 0 0 1 9-4 5 5 0 0 1 9 4c-2 5.65-9 10-9 10Z"></path></svg></span>
+            <h3>Autoestima com saúde</h3>
+            <p class="body-copy">Resultado físico acompanhado de mais confiança, disposição e relação melhor com a comida.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Como funciona</div>
+          <h2>Quatro passos para sair da dieta maluca e entrar no plano certo.</h2>
+        </div>
+        <div class="steps">
+          <article class="step-card reveal reveal-delay-1">
+            <h3>Consulta Inicial Individualizada</h3>
+            <p class="body-copy">Entendimento de rotina, histórico, exames, preferências e principais dificuldades.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-2">
+            <h3>Plano Alimentar Personalizado</h3>
+            <p class="body-copy">Estratégia prática, com refeições possíveis e escolhas que cabem no seu dia.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-1">
+            <h3>Acompanhamento e Suporte Direto pelo WhatsApp</h3>
+            <p class="body-copy">Você não fica sozinha quando aparece uma dúvida ou quando a rotina muda.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-2">
+            <h3>Retorno para Ajustar e Evoluir</h3>
+            <p class="body-copy">O plano é revisado com base na resposta do corpo, aderência e novos objetivos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft reveal" id="resultados">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Resultados / transformações</div>
+          <h2>Resultados Reais e Duradouros, sem prometer atalhos.</h2>
+          <p class="body-copy">As imagens abaixo estão preparadas para receber fotos reais de pacientes autorizados.</p>
+        </div>
+        <div class="results-layout">
+          <div class="carousel reveal reveal-delay-1" aria-label="Carrossel de transformações">
+            <article class="result-slide active">
+              <div class="before-after">
+                <div class="ba-frame">foto real antes</div>
+                <div class="ba-frame">foto real depois</div>
+              </div>
+              <div class="result-caption">
+                <p class="body-copy">Paciente em acompanhamento nutricional com ajuste de rotina e suporte entre consultas.</p>
+                <strong class="result-number">-12 kg</strong>
+              </div>
+            </article>
+            <article class="result-slide">
+              <div class="before-after">
+                <div class="ba-frame">foto real antes</div>
+                <div class="ba-frame">foto real depois</div>
+              </div>
+              <div class="result-caption">
+                <p class="body-copy">Redução de medidas com plano alimentar possível para rotina de trabalho.</p>
+                <strong class="result-number">-8 cm</strong>
+              </div>
+            </article>
+            <article class="result-slide">
+              <div class="before-after">
+                <div class="ba-frame">foto real antes</div>
+                <div class="ba-frame">foto real depois</div>
+              </div>
+              <div class="result-caption">
+                <p class="body-copy">Mais energia e constância após troca de dietas restritivas por acompanhamento.</p>
+                <strong class="result-number">90 dias</strong>
+              </div>
+            </article>
+            <div class="carousel-controls" aria-label="Controles do carrossel">
+              <button type="button" data-carousel="prev" aria-label="Transformação anterior">←</button>
+              <button type="button" data-carousel="next" aria-label="Próxima transformação">→</button>
+            </div>
+          </div>
+          <aside class="stats reveal reveal-delay-2" aria-label="Estatísticas do atendimento">
+            <div class="stat-card">
+              <strong>+3 mil</strong>
+              <p class="body-copy">pacientes atendidos com plano individualizado.</p>
+            </div>
+            <div class="stat-card">
+              <strong>1:1</strong>
+              <p class="body-copy">consulta online com orientação feita para sua rotina, não para uma média genérica.</p>
+            </div>
+            <div class="stat-card">
+              <strong>Online</strong>
+              <p class="body-copy">acompanhamento remoto pelo WhatsApp, com base em Florianópolis.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="publico">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Público alvo</div>
+          <h2>Para quem quer resultado sem perder a vida real no caminho.</h2>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card reveal reveal-delay-1">
+            <span class="label">Rotina corrida</span>
+            <h3>Quem trabalha muito e sente que a alimentação saiu do controle</h3>
+            <p class="body-copy">Estratégia para montar escolhas possíveis em casa, na rua e no trabalho.</p>
+          </article>
+          <article class="audience-card reveal reveal-delay-2">
+            <span class="label">Recomeço</span>
+            <h3>Quem já tentou dietas restritivas e não conseguiu manter</h3>
+            <p class="body-copy">Menos proibição, mais clareza sobre fome, saciedade, energia e constância.</p>
+          </article>
+          <article class="audience-card reveal reveal-delay-3">
+            <span class="label">Saúde</span>
+            <h3>Quem quer melhorar exames, autoestima e disposição</h3>
+            <p class="body-copy">O emagrecimento aparece como parte de um corpo funcionando melhor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft reveal" id="depoimentos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Depoimentos</div>
+          <h2>Histórias preparadas para receber provas reais.</h2>
+          <p class="body-copy">Nomes, fotos e frases abaixo são placeholders honestos até a inclusão dos relatos autorizados.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="person">
+              <div class="avatar">foto</div>
+              <div><strong>Paciente A</strong><p class="body-copy">atendimento online</p></div>
+            </div>
+            <p class="quote">"Eu parei de tentar compensar tudo na segunda-feira e comecei a ter um plano possível."</p>
+            <span class="result-tag">resultado a inserir</span>
+          </article>
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="person">
+              <div class="avatar">foto</div>
+              <div><strong>Paciente B</strong><p class="body-copy">atendimento online</p></div>
+            </div>
+            <p class="quote">"O suporte pelo WhatsApp fez diferença nos dias em que eu teria desistido."</p>
+            <span class="result-tag">resultado a inserir</span>
+          </article>
+          <article class="testimonial-card reveal reveal-delay-3">
+            <div class="person">
+              <div class="avatar">foto</div>
+              <div><strong>Paciente C</strong><p class="body-copy">atendimento online</p></div>
+            </div>
+            <p class="quote">"A consulta foi direta, humana e sem terrorismo alimentar."</p>
+            <span class="result-tag">resultado a inserir</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário estilo Typeform -->
+    <section class="typeform-section reveal" id="avaliacao">
+      <div class="container">
+        <div class="section-head" style="margin-bottom: 28px;">
+          <div class="eyebrow">Avaliação gratuita</div>
+          <h2>Vamos começar? Me conta um pouco sobre você.</h2>
+          <p class="body-copy">Leva menos de 1 minuto. Filipe vai analisar suas respostas antes de entrar em contato.</p>
+        </div>
+        <div class="typeform-wrap">
+          <div class="typeform-card">
+            <div class="tf-progress-bar" role="progressbar" aria-label="Progresso do formulário" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+              <div class="tf-progress-fill" id="tf-fill" style="width: 16.6%"></div>
+            </div>
+            <div class="tf-body" id="tf-body">
+
+              <!-- Step 1 -->
+              <div class="tf-step tf-active" data-step="1">
+                <div>
+                  <div class="tf-step-label">Passo 1 de 6</div>
+                  <p class="tf-question">Qual é o seu principal objetivo agora?</p>
+                </div>
+                <div class="tf-options" role="group" aria-label="Objetivo principal">
+                  <button type="button" class="tf-option" data-step="1" data-value="Emagrecer com saúde e manter o resultado">
+                    <span class="tf-option-key">A</span> Emagrecer com saúde e manter o resultado
+                  </button>
+                  <button type="button" class="tf-option" data-step="1" data-value="Ter mais energia e disposição no dia a dia">
+                    <span class="tf-option-key">B</span> Ter mais energia e disposição no dia a dia
+                  </button>
+                  <button type="button" class="tf-option" data-step="1" data-value="Melhorar exames e saúde metabólica">
+                    <span class="tf-option-key">C</span> Melhorar exames e saúde metabólica
+                  </button>
+                  <button type="button" class="tf-option" data-step="1" data-value="Criar uma relação mais saudável com a comida">
+                    <span class="tf-option-key">D</span> Criar uma relação mais saudável com a comida
+                  </button>
+                </div>
+                <div class="tf-actions">
+                  <span class="tf-counter">1 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-next" data-next="2">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="tf-step" data-step="2">
+                <div>
+                  <div class="tf-step-label">Passo 2 de 6</div>
+                  <p class="tf-question">Já tentou alguma dieta ou acompanhamento nutricional antes?</p>
+                </div>
+                <div class="tf-options" role="group" aria-label="Experiência anterior">
+                  <button type="button" class="tf-option" data-step="2" data-value="Sim, mas não consegui manter os resultados">
+                    <span class="tf-option-key">A</span> Sim, mas não consegui manter os resultados
+                  </button>
+                  <button type="button" class="tf-option" data-step="2" data-value="Sim, mas a dieta era restritiva demais">
+                    <span class="tf-option-key">B</span> Sim, mas a dieta era restritiva demais
+                  </button>
+                  <button type="button" class="tf-option" data-step="2" data-value="Nunca tive acompanhamento profissional">
+                    <span class="tf-option-key">C</span> Nunca tive acompanhamento profissional
+                  </button>
+                  <button type="button" class="tf-option" data-step="2" data-value="Tenho acompanhamento mas quero mudar de profissional">
+                    <span class="tf-option-key">D</span> Tenho acompanhamento mas quero mudar de profissional
+                  </button>
+                </div>
+                <div class="tf-actions">
+                  <span class="tf-counter">2 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="1">← Voltar</button>
+                    <button type="button" class="tf-btn-next" data-next="3">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="tf-step" data-step="3">
+                <div>
+                  <div class="tf-step-label">Passo 3 de 6</div>
+                  <p class="tf-question">Como é sua rotina de alimentação hoje?</p>
+                </div>
+                <div class="tf-options" role="group" aria-label="Rotina alimentar">
+                  <button type="button" class="tf-option" data-step="3" data-value="Pulo refeições e compenso depois">
+                    <span class="tf-option-key">A</span> Pulo refeições e compenso depois
+                  </button>
+                  <button type="button" class="tf-option" data-step="3" data-value="Como bem, mas não emagreço como esperava">
+                    <span class="tf-option-key">B</span> Como bem, mas não emagreço como esperava
+                  </button>
+                  <button type="button" class="tf-option" data-step="3" data-value="Rotina muito corrida — como o que aparece">
+                    <span class="tf-option-key">C</span> Rotina muito corrida — como o que aparece
+                  </button>
+                  <button type="button" class="tf-option" data-step="3" data-value="Tenho ansiedade ou belisco muito">
+                    <span class="tf-option-key">D</span> Tenho ansiedade ou belisco muito
+                  </button>
+                </div>
+                <div class="tf-actions">
+                  <span class="tf-counter">3 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="2">← Voltar</button>
+                    <button type="button" class="tf-btn-next" data-next="4">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="tf-step" data-step="4">
+                <div>
+                  <div class="tf-step-label">Passo 4 de 6</div>
+                  <p class="tf-question">Qual é o seu nome?</p>
+                </div>
+                <input class="tf-input" type="text" id="tf-nome" placeholder="Digite seu nome…" autocomplete="given-name" aria-label="Seu nome">
+                <div class="tf-actions">
+                  <span class="tf-counter">4 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="3">← Voltar</button>
+                    <button type="button" class="tf-btn-next" data-next="5">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="tf-step" data-step="5">
+                <div>
+                  <div class="tf-step-label">Passo 5 de 6</div>
+                  <p class="tf-question">Qual é o seu WhatsApp?</p>
+                </div>
+                <input class="tf-input" type="tel" id="tf-telefone" placeholder="(00) 00000-0000" autocomplete="tel" aria-label="Seu telefone">
+                <div class="tf-actions">
+                  <span class="tf-counter">5 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="4">← Voltar</button>
+                    <button type="button" class="tf-btn-next" data-next="6">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 6 — Confirmação -->
+              <div class="tf-step" data-step="6">
+                <div>
+                  <div class="tf-step-label">Passo 6 de 6</div>
+                  <p class="tf-question">Quer adicionar alguma mensagem ou dúvida rápida?</p>
+                </div>
+                <textarea class="tf-input" id="tf-mensagem" rows="4" placeholder="Opcional — escreva o que quiser…" style="resize: none;" aria-label="Mensagem opcional"></textarea>
+                <div class="tf-actions">
+                  <span class="tf-counter">6 / 6</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="5">← Voltar</button>
+                    <button type="button" class="tf-btn-next" id="tf-submit">Enviar formulário</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tela de obrigado -->
+              <div class="tf-done" id="tf-done" role="status">
+                <div class="tf-done-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                </div>
+                <p class="tf-question" style="font-size: clamp(20px, 3.5vw, 28px);">Ótimo! Você será redirecionado(a) para o WhatsApp agora.</p>
+                <p class="body-copy">Filipe vai analisar suas respostas e entrar em contato em breve.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta reveal" id="comece">
+      <div class="container final-box">
+        <div>
+          <div class="eyebrow" style="color: rgba(255,255,255,0.82)">O seu metabolismo não espera</div>
+          <h2>Pronto(a) para Transformar Sua Saúde?</h2>
+          <p class="lead">Comece com uma conversa pelo WhatsApp e entenda o melhor caminho para o seu acompanhamento.</p>
+        </div>
+        <a class="btn btn-accent" href="https://wa.me/559492836085">QUERO COMEÇAR AGORA!</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Filipe Alves Nutri</strong>
+        <p>Nutrição clínica online e emagrecimento saudável com acompanhamento próximo.</p>
+      </div>
+      <div>
+        <strong>Redes sociais</strong>
+        <div class="social-links">
+          <a href="https://wa.me/559492836085" aria-label="WhatsApp" class="social-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.856L.057 23.882a.5.5 0 0 0 .612.612l6.096-1.46A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.944 9.944 0 0 1-5.07-1.382l-.363-.217-3.768.902.918-3.68-.236-.379A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+          <a href="https://instagram.com/filipealvesnutri" aria-label="Instagram" class="social-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://fb.com/filipealves.nutric" aria-label="Facebook" class="social-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <strong>Atendimento</strong>
+        <p>Online para todo o Brasil · Base profissional em Florianópolis - SC</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/559492836085" aria-label="Chamar Filipe Alves Nutri no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.6a8.5 8.5 0 1 1 16.3-3.9Z"></path><path d="M8.5 8.8c.2 3.1 2.6 5.5 5.7 6 .7.1 1.3-.4 1.5-1l.2-.7c.1-.4-.1-.8-.5-1l-1.2-.6c-.3-.2-.8-.1-1 .2l-.4.5c-.9-.4-1.7-1.2-2.1-2.1l.5-.4c.3-.2.4-.7.2-1l-.6-1.2c-.2-.4-.6-.6-1-.5l-.7.2c-.6.2-1 .8-1 1.5Z"></path></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    /* ─── Typeform ─── */
+    (function () {
+      const TOTAL = 6;
+      const answers = {};
+
+      function pct(step) { return Math.round((step / TOTAL) * 100); }
+
+      function goTo(step) {
+        document.querySelectorAll('.tf-step').forEach((el) => el.classList.remove('tf-active'));
+        document.getElementById('tf-done')?.classList.remove('tf-active');
+        const target = document.querySelector(`.tf-step[data-step="${step}"]`);
+        if (target) {
+          target.classList.add('tf-active');
+          const fill = document.getElementById('tf-fill');
+          if (fill) fill.style.width = pct(step - 1) + '%';
+          const bar = document.querySelector('.tf-progress-bar');
+          if (bar) bar.setAttribute('aria-valuenow', pct(step - 1));
+        }
+      }
+
+      function showDone() {
+        document.querySelectorAll('.tf-step').forEach((el) => el.classList.remove('tf-active'));
+        const done = document.getElementById('tf-done');
+        if (done) done.classList.add('tf-active');
+        const fill = document.getElementById('tf-fill');
+        if (fill) fill.style.width = '100%';
+      }
+
+      function buildWhatsApp() {
+        const nome = (document.getElementById('tf-nome')?.value || '').trim() || 'Sem nome';
+        const tel = (document.getElementById('tf-telefone')?.value || '').trim();
+        const msg = (document.getElementById('tf-mensagem')?.value || '').trim();
+        const lines = [
+          '👋 Olá, Filipe! Vim pelo site e fiz a avaliação gratuita.',
+          '',
+          `*Nome:* ${nome}`,
+          tel ? `*WhatsApp:* ${tel}` : null,
+          '',
+          '*Respostas:*',
+          answers[1] ? `• Objetivo: ${answers[1]}` : null,
+          answers[2] ? `• Histórico: ${answers[2]}` : null,
+          answers[3] ? `• Rotina: ${answers[3]}` : null,
+          msg ? `\n*Mensagem:* ${msg}` : null,
+        ].filter((l) => l !== null);
+        return 'https://wa.me/559492836085?text=' + encodeURIComponent(lines.join('\n'));
+      }
+
+      document.getElementById('tf-body')?.addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+
+        /* Selecionar opção */
+        if (btn.classList.contains('tf-option')) {
+          const step = Number(btn.dataset.step);
+          btn.closest('.tf-options')?.querySelectorAll('.tf-option').forEach((o) => o.classList.remove('selected'));
+          btn.classList.add('selected');
+          answers[step] = btn.dataset.value;
+          /* Auto-avançar após 300 ms */
+          const nextStep = step + 1;
+          if (nextStep <= TOTAL) setTimeout(() => goTo(nextStep), 320);
+          return;
+        }
+
+        /* Próximo */
+        if (btn.dataset.next) {
+          const next = Number(btn.dataset.next);
+          if (btn.id === 'tf-submit') {
+            showDone();
+            setTimeout(() => {
+              window.open(buildWhatsApp(), '_blank');
+              window.location.href = 'obrigado.html';
+            }, 1400);
+            return;
+          }
+          goTo(next);
+          return;
+        }
+
+        /* Voltar */
+        if (btn.dataset.back) {
+          goTo(Number(btn.dataset.back));
+        }
+      });
+
+      /* Máscara telefone */
+      document.getElementById('tf-telefone')?.addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length > 2) v = '(' + v.slice(0, 2) + ') ' + v.slice(2);
+        if (v.length > 10) v = v.slice(0, 10) + '-' + v.slice(10);
+        this.value = v;
+      });
+    })();
+
+    /* ─── Menu ─── */
+    const menuButton = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('#mobile-menu');
+    menuButton?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open', isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const slides = Array.from(document.querySelectorAll('.result-slide'));
+    let currentSlide = 0;
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+    }
+    document.querySelector('[data-carousel="prev"]')?.addEventListener('click', () => showSlide(currentSlide - 1));
+    document.querySelector('[data-carousel="next"]')?.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('visible'));
+    }
+  </script>
+
+
+</body></html>
