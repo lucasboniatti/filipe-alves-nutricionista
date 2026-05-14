@@ -1531,8 +1531,9 @@
           const next = Number(btn.dataset.next);
           if (btn.id === 'tf-submit') {
             showDone();
+            const waUrl = buildWhatsApp();
             setTimeout(() => {
-              window.open(buildWhatsApp(), '_blank');
+              try { window.open(waUrl, '_blank'); } catch(e) {}
               window.location.href = 'obrigado.html';
             }, 1400);
             return;
