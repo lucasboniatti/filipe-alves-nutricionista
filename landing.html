@@ -1206,6 +1206,31 @@
       </div>
     </section>
 
+    <!-- Endereço / Modalidade de atendimento -->
+    <section class="reveal" id="atendimento" style="padding: 56px 0 0;">
+      <div class="container">
+        <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center;">
+          <div style="flex:1; min-width:260px; max-width:420px; background:#f3f4f6; border-radius:16px; padding:28px 28px 24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:10px; color:var(--primary);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <strong style="font-size:1rem;">Consulta Online</strong>
+            </div>
+            <p style="color:#4a4a4a; font-size:.95rem; margin:0;">Atendimento online para todo o Brasil via videochamada. Plano alimentar, acompanhamento e suporte pelo WhatsApp — sem sair de casa.</p>
+          </div>
+          <div style="flex:1; min-width:260px; max-width:420px; background:#f3f4f6; border-radius:16px; padding:28px 28px 24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:10px; color:var(--primary);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <strong style="font-size:1rem;">Consulta Presencial</strong>
+            </div>
+            <p style="color:#4a4a4a; font-size:.95rem; margin:0;">Atendimento presencial em Florianópolis - SC.</p>
+            <a href="https://maps.google.com/?q=R.+Pastor+William+Richard+Schisler+Filho,+Itacorubi,+Florian%C3%B3polis+-+SC,+88034-100" target="_blank" rel="noopener" style="color:var(--primary); font-size:.9rem; text-decoration:underline; margin-top:4px;">
+              R. Pastor William Richard Schisler Filho — Itacorubi, Florianópolis - SC, 88034-100 ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Formulário estilo Typeform -->
     <section class="typeform-section reveal" id="avaliacao">
       <div class="container">
@@ -1217,32 +1242,26 @@
         <div class="typeform-wrap">
           <div class="typeform-card">
             <div class="tf-progress-bar" role="progressbar" aria-label="Progresso do formulário" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-              <div class="tf-progress-fill" id="tf-fill" style="width: 16.6%"></div>
+              <div class="tf-progress-fill" id="tf-fill" style="width: 14.2%"></div>
             </div>
             <div class="tf-body" id="tf-body">
 
-              <!-- Step 1 -->
+              <!-- Step 1 — Modalidade -->
               <div class="tf-step tf-active" data-step="1">
                 <div>
-                  <div class="tf-step-label">Passo 1 de 6</div>
-                  <p class="tf-question">Qual é o seu principal objetivo agora?</p>
+                  <div class="tf-step-label">Passo 1 de 7</div>
+                  <p class="tf-question">Como você prefere ser atendido(a)?</p>
                 </div>
-                <div class="tf-options" role="group" aria-label="Objetivo principal">
-                  <button type="button" class="tf-option" data-step="1" data-value="Emagrecer com saúde e manter o resultado">
-                    <span class="tf-option-key">A</span> Emagrecer com saúde e manter o resultado
+                <div class="tf-options" role="group" aria-label="Modalidade de atendimento">
+                  <button type="button" class="tf-option" data-step="1" data-value="Online (videochamada, para todo o Brasil)">
+                    <span class="tf-option-key">A</span> Online — videochamada, para todo o Brasil
                   </button>
-                  <button type="button" class="tf-option" data-step="1" data-value="Ter mais energia e disposição no dia a dia">
-                    <span class="tf-option-key">B</span> Ter mais energia e disposição no dia a dia
-                  </button>
-                  <button type="button" class="tf-option" data-step="1" data-value="Melhorar exames e saúde metabólica">
-                    <span class="tf-option-key">C</span> Melhorar exames e saúde metabólica
-                  </button>
-                  <button type="button" class="tf-option" data-step="1" data-value="Criar uma relação mais saudável com a comida">
-                    <span class="tf-option-key">D</span> Criar uma relação mais saudável com a comida
+                  <button type="button" class="tf-option" data-step="1" data-value="Presencial (Florianópolis - SC)">
+                    <span class="tf-option-key">B</span> Presencial — Florianópolis - SC
                   </button>
                 </div>
                 <div class="tf-actions">
-                  <span class="tf-counter">1 / 6</span>
+                  <span class="tf-counter">1 / 7</span>
                   <div class="tf-nav">
                     <button type="button" class="tf-btn-next" data-next="2">Próximo →</button>
                   </div>
@@ -1252,25 +1271,25 @@
               <!-- Step 2 -->
               <div class="tf-step" data-step="2">
                 <div>
-                  <div class="tf-step-label">Passo 2 de 6</div>
-                  <p class="tf-question">Já tentou alguma dieta ou acompanhamento nutricional antes?</p>
+                  <div class="tf-step-label">Passo 2 de 7</div>
+                  <p class="tf-question">Qual é o seu principal objetivo agora?</p>
                 </div>
-                <div class="tf-options" role="group" aria-label="Experiência anterior">
-                  <button type="button" class="tf-option" data-step="2" data-value="Sim, mas não consegui manter os resultados">
-                    <span class="tf-option-key">A</span> Sim, mas não consegui manter os resultados
+                <div class="tf-options" role="group" aria-label="Objetivo principal">
+                  <button type="button" class="tf-option" data-step="2" data-value="Emagrecer com saúde e manter o resultado">
+                    <span class="tf-option-key">A</span> Emagrecer com saúde e manter o resultado
                   </button>
-                  <button type="button" class="tf-option" data-step="2" data-value="Sim, mas a dieta era restritiva demais">
-                    <span class="tf-option-key">B</span> Sim, mas a dieta era restritiva demais
+                  <button type="button" class="tf-option" data-step="2" data-value="Ter mais energia e disposição no dia a dia">
+                    <span class="tf-option-key">B</span> Ter mais energia e disposição no dia a dia
                   </button>
-                  <button type="button" class="tf-option" data-step="2" data-value="Nunca tive acompanhamento profissional">
-                    <span class="tf-option-key">C</span> Nunca tive acompanhamento profissional
+                  <button type="button" class="tf-option" data-step="2" data-value="Melhorar exames e saúde metabólica">
+                    <span class="tf-option-key">C</span> Melhorar exames e saúde metabólica
                   </button>
-                  <button type="button" class="tf-option" data-step="2" data-value="Tenho acompanhamento mas quero mudar de profissional">
-                    <span class="tf-option-key">D</span> Tenho acompanhamento mas quero mudar de profissional
+                  <button type="button" class="tf-option" data-step="2" data-value="Criar uma relação mais saudável com a comida">
+                    <span class="tf-option-key">D</span> Criar uma relação mais saudável com a comida
                   </button>
                 </div>
                 <div class="tf-actions">
-                  <span class="tf-counter">2 / 6</span>
+                  <span class="tf-counter">2 / 7</span>
                   <div class="tf-nav">
                     <button type="button" class="tf-btn-back" data-back="1">← Voltar</button>
                     <button type="button" class="tf-btn-next" data-next="3">Próximo →</button>
@@ -1281,25 +1300,25 @@
               <!-- Step 3 -->
               <div class="tf-step" data-step="3">
                 <div>
-                  <div class="tf-step-label">Passo 3 de 6</div>
-                  <p class="tf-question">Como é sua rotina de alimentação hoje?</p>
+                  <div class="tf-step-label">Passo 3 de 7</div>
+                  <p class="tf-question">Já tentou alguma dieta ou acompanhamento nutricional antes?</p>
                 </div>
-                <div class="tf-options" role="group" aria-label="Rotina alimentar">
-                  <button type="button" class="tf-option" data-step="3" data-value="Pulo refeições e compenso depois">
-                    <span class="tf-option-key">A</span> Pulo refeições e compenso depois
+                <div class="tf-options" role="group" aria-label="Experiência anterior">
+                  <button type="button" class="tf-option" data-step="3" data-value="Sim, mas não consegui manter os resultados">
+                    <span class="tf-option-key">A</span> Sim, mas não consegui manter os resultados
                   </button>
-                  <button type="button" class="tf-option" data-step="3" data-value="Como bem, mas não emagreço como esperava">
-                    <span class="tf-option-key">B</span> Como bem, mas não emagreço como esperava
+                  <button type="button" class="tf-option" data-step="3" data-value="Sim, mas a dieta era restritiva demais">
+                    <span class="tf-option-key">B</span> Sim, mas a dieta era restritiva demais
                   </button>
-                  <button type="button" class="tf-option" data-step="3" data-value="Rotina muito corrida — como o que aparece">
-                    <span class="tf-option-key">C</span> Rotina muito corrida — como o que aparece
+                  <button type="button" class="tf-option" data-step="3" data-value="Nunca tive acompanhamento profissional">
+                    <span class="tf-option-key">C</span> Nunca tive acompanhamento profissional
                   </button>
-                  <button type="button" class="tf-option" data-step="3" data-value="Tenho ansiedade ou belisco muito">
-                    <span class="tf-option-key">D</span> Tenho ansiedade ou belisco muito
+                  <button type="button" class="tf-option" data-step="3" data-value="Tenho acompanhamento mas quero mudar de profissional">
+                    <span class="tf-option-key">D</span> Tenho acompanhamento mas quero mudar de profissional
                   </button>
                 </div>
                 <div class="tf-actions">
-                  <span class="tf-counter">3 / 6</span>
+                  <span class="tf-counter">3 / 7</span>
                   <div class="tf-nav">
                     <button type="button" class="tf-btn-back" data-back="2">← Voltar</button>
                     <button type="button" class="tf-btn-next" data-next="4">Próximo →</button>
@@ -1310,12 +1329,25 @@
               <!-- Step 4 -->
               <div class="tf-step" data-step="4">
                 <div>
-                  <div class="tf-step-label">Passo 4 de 6</div>
-                  <p class="tf-question">Qual é o seu nome?</p>
+                  <div class="tf-step-label">Passo 4 de 7</div>
+                  <p class="tf-question">Como é sua rotina de alimentação hoje?</p>
                 </div>
-                <input class="tf-input" type="text" id="tf-nome" placeholder="Digite seu nome…" autocomplete="given-name" aria-label="Seu nome">
+                <div class="tf-options" role="group" aria-label="Rotina alimentar">
+                  <button type="button" class="tf-option" data-step="4" data-value="Pulo refeições e compenso depois">
+                    <span class="tf-option-key">A</span> Pulo refeições e compenso depois
+                  </button>
+                  <button type="button" class="tf-option" data-step="4" data-value="Como bem, mas não emagreço como esperava">
+                    <span class="tf-option-key">B</span> Como bem, mas não emagreço como esperava
+                  </button>
+                  <button type="button" class="tf-option" data-step="4" data-value="Rotina muito corrida — como o que aparece">
+                    <span class="tf-option-key">C</span> Rotina muito corrida — como o que aparece
+                  </button>
+                  <button type="button" class="tf-option" data-step="4" data-value="Tenho ansiedade ou belisco muito">
+                    <span class="tf-option-key">D</span> Tenho ansiedade ou belisco muito
+                  </button>
+                </div>
                 <div class="tf-actions">
-                  <span class="tf-counter">4 / 6</span>
+                  <span class="tf-counter">4 / 7</span>
                   <div class="tf-nav">
                     <button type="button" class="tf-btn-back" data-back="3">← Voltar</button>
                     <button type="button" class="tf-btn-next" data-next="5">Próximo →</button>
@@ -1326,12 +1358,12 @@
               <!-- Step 5 -->
               <div class="tf-step" data-step="5">
                 <div>
-                  <div class="tf-step-label">Passo 5 de 6</div>
-                  <p class="tf-question">Qual é o seu WhatsApp?</p>
+                  <div class="tf-step-label">Passo 5 de 7</div>
+                  <p class="tf-question">Qual é o seu nome?</p>
                 </div>
-                <input class="tf-input" type="tel" id="tf-telefone" placeholder="(00) 00000-0000" autocomplete="tel" aria-label="Seu telefone">
+                <input class="tf-input" type="text" id="tf-nome" placeholder="Digite seu nome…" autocomplete="given-name" aria-label="Seu nome">
                 <div class="tf-actions">
-                  <span class="tf-counter">5 / 6</span>
+                  <span class="tf-counter">5 / 7</span>
                   <div class="tf-nav">
                     <button type="button" class="tf-btn-back" data-back="4">← Voltar</button>
                     <button type="button" class="tf-btn-next" data-next="6">Próximo →</button>
@@ -1339,17 +1371,33 @@
                 </div>
               </div>
 
-              <!-- Step 6 — Confirmação -->
+              <!-- Step 6 -->
               <div class="tf-step" data-step="6">
                 <div>
-                  <div class="tf-step-label">Passo 6 de 6</div>
+                  <div class="tf-step-label">Passo 6 de 7</div>
+                  <p class="tf-question">Qual é o seu WhatsApp?</p>
+                </div>
+                <input class="tf-input" type="tel" id="tf-telefone" placeholder="(00) 00000-0000" autocomplete="tel" aria-label="Seu telefone">
+                <div class="tf-actions">
+                  <span class="tf-counter">6 / 7</span>
+                  <div class="tf-nav">
+                    <button type="button" class="tf-btn-back" data-back="5">← Voltar</button>
+                    <button type="button" class="tf-btn-next" data-next="7">Próximo →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 7 — Confirmação -->
+              <div class="tf-step" data-step="7">
+                <div>
+                  <div class="tf-step-label">Passo 7 de 7</div>
                   <p class="tf-question">Quer adicionar alguma mensagem ou dúvida rápida?</p>
                 </div>
                 <textarea class="tf-input" id="tf-mensagem" rows="4" placeholder="Opcional — escreva o que quiser…" style="resize: none;" aria-label="Mensagem opcional"></textarea>
                 <div class="tf-actions">
-                  <span class="tf-counter">6 / 6</span>
+                  <span class="tf-counter">7 / 7</span>
                   <div class="tf-nav">
-                    <button type="button" class="tf-btn-back" data-back="5">← Voltar</button>
+                    <button type="button" class="tf-btn-back" data-back="6">← Voltar</button>
                     <button type="button" class="tf-btn-next" id="tf-submit">Enviar formulário</button>
                   </div>
                 </div>
@@ -1416,7 +1464,7 @@
   <script>
     /* ─── Typeform ─── */
     (function () {
-      const TOTAL = 6;
+      const TOTAL = 7;
       const answers = {};
 
       function pct(step) { return Math.round((step / TOTAL) * 100); }
@@ -1453,9 +1501,10 @@
           tel ? `*WhatsApp:* ${tel}` : null,
           '',
           '*Respostas:*',
-          answers[1] ? `• Objetivo: ${answers[1]}` : null,
-          answers[2] ? `• Histórico: ${answers[2]}` : null,
-          answers[3] ? `• Rotina: ${answers[3]}` : null,
+          answers[1] ? `• Modalidade: ${answers[1]}` : null,
+          answers[2] ? `• Objetivo: ${answers[2]}` : null,
+          answers[3] ? `• Histórico: ${answers[3]}` : null,
+          answers[4] ? `• Rotina: ${answers[4]}` : null,
           msg ? `\n*Mensagem:* ${msg}` : null,
         ].filter((l) => l !== null);
         return 'https://wa.me/559492836085?text=' + encodeURIComponent(lines.join('\n'));
